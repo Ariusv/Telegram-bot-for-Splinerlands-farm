@@ -1,5 +1,6 @@
 
 ### ENG
+Read this in other languages: [Ukrainian](https://github.com/Ariusv/Telegram-bot-for-Splinerlands-farm/blob/main/README-UA.md)
 # A Telegram bot for managing accounts in Splinterlands
 It's an add-on for [the alfficcadenti bot](https://github.com/alfficcadenti/splinterlands-bot)
 
