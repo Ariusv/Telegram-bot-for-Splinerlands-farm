@@ -19,11 +19,18 @@
 В текстовий файл creds.txt вписуємо дані акаунтів Splinterlands у форматі (один акаунт - один рядок):
 
 * login email posting_key active_key
+* login email posting_key active_key
+* ...
 
-В файлі config.py присвоюємо значення:
 
-* TOKEN — токен вашого telegram бота в лапках
-* ADMIN_ID — ваше унікальне [id](@GetMyIdBot_bot)
+В файлі config.json вписуємо:
+
+* "token": "токен вашого telegram бота в лапках"
+* "admin_id": ваше унікальне [id](@GetMyIdBot_bot) без лапок
+
+
+Приклад: 
+{"token": "738309:4mfeo94ckdmv493mdk", "admin_id":1729304736 }
 
 Базу битв newHistory.json закидуємо в папку data.
 
