@@ -16,7 +16,7 @@
 * pip install requests
 * pip install aiogram
 
-В текстовий файл creds.txt вписуємо дані акаунтів Splinterlands у форматі:
+В текстовий файл creds.txt вписуємо дані акаунтів Splinterlands у форматі (один акаунт - один рядок):
 
 * login email posting_key active_key
 
