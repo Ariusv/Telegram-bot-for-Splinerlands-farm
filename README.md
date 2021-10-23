@@ -1,6 +1,12 @@
 ### UA
 # Telegram бот для адміністрування ферми в Splinterlands
 Ця програма є надбудовую для бота [alfficcadenti](https://github.com/alfficcadenti/splinterlands-bot)
+
+## Донат
+Буду вдячний за можливу фінансову підтримку)
+* BSC - 0xB82D7f7092145A587151DE7329183D7561207d2D
+* ETHEREUM - 0xB82D7f7092145A587151DE7329183D7561207d2D
+
 ## Інсталяція
 Спершу слід встановити [Python](https://www.python.org/downloads/), а також [NodeJS](https://nodejs.org/it/download/).
 Після цього в кореневу директорію бота потрібно завантажити [chromedriver](https://chromedriver.chromium.org/downloads) і за допомогою cmd (Windows) або terminal (MAC/Linux) виконати наступні команди:
@@ -14,11 +20,10 @@
 
 * login email posting_key active_key
 
-В файлі config.py присвоюємо значення змінним:
+В файлі config.py присвоюємо значення:
 
 * TOKEN — токен вашого telegram бота в лапках
 * ADMIN_ID — ваше унікальне [id](@GetMyIdBot_bot)
-* player_name_ — логін акаунта, куди надсилатимуться карти з інших акаунтів (В майбутньому дозволю вибирати логін в боті)
 
 Базу битв newHistory.json закидуємо в папку data.
 
@@ -49,10 +54,6 @@
 ![](/images/7.png)
 * Start - продовження роботи з обраною стратегією
 * Withdraw decs - надсилання деків на BSC гаманець або гравцеві з усіх чи лише обраних акаунтів. Гаманець має бути збережений на кожному акаунті.
-* Send cards - надсилання карт player_name_ з файлу config.py з усіх чи лише обраних акаунтів.
+* Send cards - надсилання карт гравцеві з усіх чи лише обраних акаунтів.
 * Skip quests - пропуск квестів.
 
-## Донат
-Буду вдячний за можливу фінансову підтримку)
-* BSC - 0xB82D7f7092145A587151DE7329183D7561207d2D
-* ETHEREUM - 0xB82D7f7092145A587151DE7329183D7561207d2D
