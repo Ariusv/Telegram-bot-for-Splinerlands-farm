@@ -4,7 +4,7 @@ const puppeteer = require('puppeteer');
 
 async function login(page) {
     try {
-        //await page.click('.navbar-toggle.collapsed'); //FIRST STEP NEEDED IF PAGE SIZE TOO SMALL   
+        //await page.click('.navbar-toggle.collapsed'); //FIRST STEP NEEDED IF PAGE SIZE TOO SMALL
         //await page.waitFor(1000);
 
         page.waitForSelector('#log_in_button > button').then(() => page.click('#log_in_button > button'))
@@ -44,7 +44,7 @@ async function openSplinter() {
         deviceScaleFactor: 1,
       });
 
-    await page.goto('https://splinterlands.io/?p=battle_history');
+    await page.goto('https://splinterlands.com/?p=battle_history');
     await page.waitForTimeout(2000);
     await login(page)
     await page.waitForTimeout(2000);
@@ -102,10 +102,10 @@ async function openSplinter() {
     //     });
 
 
-    
-    
+
+
     // card id card_167
-    
+
     // battle_container
     // btn-green
 
@@ -114,10 +114,10 @@ async function openSplinter() {
     //exit battle
     //button.btn-battle
 
-  
+
     //await page.waitForSelector('.algolia__results');
-  
+
     //await browser.close();
   }
-  
+
   openSplinter();

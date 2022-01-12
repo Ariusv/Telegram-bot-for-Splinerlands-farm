@@ -1,15 +1,15 @@
-async function login(page) {
+async function login(page, account, password) {
     try {
         page.waitForSelector('#log_in_button > button').then(() => page.click('#log_in_button > button'))
+        console.log(password)
         await page.waitForSelector('#email')
             .then(() => page.waitForTimeout(3000))
             .then(() => page.focus('#email'))
-            .then(() => page.type('#email', process.env.ACCOUNT))
+            .then(() => page.type('#email', account))
             .then(() => page.focus('#password'))
-            .then(() => page.type('#password', process.env.PASSWORD))
-
+            .then(() => page.type('#password', password))
+            .then(() => page.click('#loginBtn'))
             // .then(() => page.waitForSelector('#login_dialog_v2 > div > div > div.modal-body > div > div > form > div > div.col-sm-offset-1 > button', { visible: true }).then(() => page.click('#login_dialog_v2 > div > div > div.modal-body > div > div > form > div > div.col-sm-offset-1 > button')))
-            .then(() => page.keyboard.press('Enter'))
             .then(() => page.waitForTimeout(5000))
             .then(() => page.reload())
             .then(() => page.waitForTimeout(5000))

@@ -17,6 +17,8 @@ const colorToDeck = { 'Red': 'Fire', 'Blue': 'Water', 'White': 'Life', 'Black': 
 
 const deckValidColor = (accumulator, currentValue) => validDecks.includes(card.color(currentValue)) ? colorToDeck[card.color(currentValue)] : accumulator;
 
+const reload = async (page) => { console.log('reloading page...') ; await page.reload(); }
+
 const sleep = (ms) => {
     return new Promise((resolve) => {
       setTimeout(resolve, ms);
@@ -27,7 +29,7 @@ const teamActualSplinterToPlay = (teamIdsArray) => teamIdsArray.reduce(deckValid
 
 const clickOnElement = async (page, selector, timeout=20000, delayBeforeClicking = 0) => {
 	try {
-        const elem = await page.waitForSelector(selector, { timeout: timeout });
+        const elem = await page.waitForSelector(selector, {timeout: timeout });
 		if(elem) {
 			await sleep(delayBeforeClicking);
 			console.log('Clicking element', selector);
@@ -36,17 +38,30 @@ const clickOnElement = async (page, selector, timeout=20000, delayBeforeClicking
 		}
     } catch (e) {
     }
-	console.log('Could not find element', selector);
+	console.log('No element', selector, 'to be closed');
 	return false;
 }
 
 const getElementText = async (page, selector, timeout=15000) => {
-	const element = await page.waitForSelector(selector,  { timeout: timeout });
+	const element = await page.waitForSelector(selector, {timeout: timeout });
 	const text = await element.evaluate(el => el.textContent);
 	return text;
 }
 
+const getElementTextByXpath = async (page, selector, timeout=20000) => {
+	try {
+		const element = await page.waitForXPath(selector,  { timeout: timeout });
+		const text = await element.evaluate(el => el.textContent);
+		return text;
+	} catch (e) {
+		console.log('Get text by xpath error.', e);
+		return false
+	}
+}
 
 module.exports.teamActualSplinterToPlay = teamActualSplinterToPlay;
 module.exports.clickOnElement = clickOnElement;
 module.exports.getElementText = getElementText;
+module.exports.getElementTextByXpath = getElementTextByXpath;
+module.exports.sleep = sleep;
+module.exports.reload = reload;

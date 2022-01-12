@@ -19,7 +19,7 @@ async def send_to_admin(dp):
 
 bots_ = read_bots_from_file(path_to_creds)
 bot_logins = [bot.game_login for bot in bots_]
-strategy = Strategy("standart", 180, False, 2, bot_logins)
+strategy = Strategy("standart", 180, False, 3, bot_logins)
 strategy.dump_strategy()
 farm = BotAdministrator(bots_, strategy)
 log = LogAdministrator()

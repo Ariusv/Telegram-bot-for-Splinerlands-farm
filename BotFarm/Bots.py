@@ -68,7 +68,7 @@ class BotAdministrator:
             if not self.strategy.interapted:
                 time.sleep(1)
                 p = self.strategy.threads
-
+                print(self.strategy.threads)
                 bots = []
 
                 if self.strategy.type == strategies[1]:
@@ -91,7 +91,10 @@ class BotAdministrator:
 
                 l = n // p
                 d = n % p
-
+                print(l)
+                print(d)
+                print(p)
+                print(n)
                 ind = 0
                 for i in range(l):
 
